@@ -27,3 +27,19 @@ def welcome_customer():
 
 
 welcome_customer()
+
+
+def get_customer_name():
+    """
+    Request and validate customer's name
+    """
+    while True:
+        name_str = input("Please enter your name:\n")
+        if name_str.isalpha():
+            break
+        else:
+            print("That doesn't look like a name...please, try again.\n")
+    print(f"Lovely name {name_str.capitalize()}, let's keep it going.\n")
+
+
+get_customer_name()
