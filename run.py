@@ -5,9 +5,9 @@ from tabulate import tabulate
 
 
 SCOPE = [
-    "https://www.googleapis.com/auth/spreadsheets",
-    "https://www.googleapis.com/auth/drive.file",
-    "https://www.googleapis.com/auth/drive"
+    'https://www.googleapis.com/auth/spreadsheets',
+    'https://www.googleapis.com/auth/drive.file',
+    'https://www.googleapis.com/auth/drive'
     ]
 
 CREDS = Credentials.from_service_account_file('creds.json')
@@ -20,12 +20,12 @@ def welcome_customer():
     """
     Greet customer
     """
-    print("Welcome to Pasta la Vista,")
-    print("where all you can eat is delicious pasta!\n")
-    print("We will first need some information from you")
-    print("then you can proceed to order.\n")
-    print("Choose wisely, it is heard that our pasta")
-    print("...can become addictive.\n")
+    print('Welcome to Pasta la Vista,')
+    print('where all you can eat is delicious pasta!\n')
+    print('We will first need some information from you')
+    print('then you can proceed to order.\n')
+    print('Choose wisely, it is heard that our pasta')
+    print('...can become addictive.\n')
 
 
 welcome_customer()
@@ -36,7 +36,7 @@ def get_name():
     Request and validate customer's name
     """
     while True:
-        name_str = input("Please enter your name:\n")
+        name_str = input('Please enter your name:\n')
         if name_str.isalpha():
             break
         else:
@@ -52,7 +52,7 @@ def get_address():
     Request user's address
     """
     while True:
-        address = input("Please enter your address for delivery:\n")
+        address = input('Please enter your address for delivery:\n')
         if address == '':
             print("It seems like you haven't entered an address,")
             print("please try again\n")
@@ -93,3 +93,20 @@ def get_tel_number():
 
 
 get_tel_number()
+
+
+def get_menu():
+    """
+    Provides the menu for the user
+    Receives data from external spreadsheet
+    Use table rows for this data
+    Request user to input a choice between 1-5
+    """
+    print("Here are our delicious pasta dishes.")
+    print("Which one would you like to enjoy?\n")
+    menu = SHEET.worksheet('Menu').get_all_values()
+    print(tabulate(
+        menu, headers='firstrow', tablefmt='fancy_grid'))
+
+
+get_menu()
