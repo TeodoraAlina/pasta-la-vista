@@ -1,6 +1,8 @@
+import re
 import gspread
 from google.oauth2.service_account import Credentials
 from tabulate import tabulate
+
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -58,4 +60,36 @@ def get_address():
             break
     print("Thank you! We will deliver your order at this address.\n")
 
+
 get_address()
+
+
+def get_tel_number():
+    """
+    Request and validate customer telephone number
+    User must enter 11 digit numbers starting with 07
+    """
+    print("Please enter your telephone number.\n")
+
+    def validate_tel_num(tel_number):
+        """
+        Validate user telephone number
+        using RE compile method
+        """
+        telnum_pattern = re.compile(r"^(07\d{9}|447\d{9})$")
+        return telnum_pattern.match(tel_number)
+    #  While loop to request user inputs valid contact phone number
+    #  If not valid, error message asks the user to try again
+    while True:
+        tel_number = input("Enter your telephone number here:\n")
+        if validate_tel_num(tel_number):
+            print(f"Thank you, we will use {tel_number} to contact you"
+                  " when we get at you location\n")
+        else:
+            print("Invalid number. You must enter 11 digits, starting with 07,"
+                  " plese try again!\n")
+            continue
+        return tel_number
+
+
+get_tel_number()
