@@ -29,7 +29,7 @@ def welcome_customer():
 welcome_customer()
 
 
-def get_customer_name():
+def get_name():
     """
     Request and validate customer's name
     """
@@ -42,4 +42,20 @@ def get_customer_name():
     print(f"Lovely name {name_str.capitalize()}, let's keep it going.\n")
 
 
-get_customer_name()
+get_name()
+
+
+def get_address():
+    """
+    Request user's address
+    """
+    while True:
+        address = input("Please enter your address for delivery:\n")
+        if address == '':
+            print("It seems like you haven't entered an address,")
+            print("please try again\n")
+        else:
+            break
+    print("Thank you! We will deliver your order at this address.\n")
+
+get_address()
