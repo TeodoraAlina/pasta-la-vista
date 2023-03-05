@@ -131,3 +131,43 @@ def get_menu():
 
 
 get_menu()
+
+
+def get_pasta():
+    """
+    Provide a table for types of pasta.
+    Request user to input choice.
+    """
+    print("We have different types of pasta for you to choose from")
+    print("Which one would you like to choose?\n")
+    pasta = SHEET.worksheet("Pasta").get_all_values()
+    print(tabulate(
+        pasta, headers='firstrow', tablefmt='fancy_grid'))
+    while True:
+        pasta_choice = input("Enter your choice here:\n").strip()
+        if pasta_choice == "1":
+            pasta_choice = "Spaghetti"
+            print("Yummy! You chose Spaghetti.\n")
+            return pasta_choice
+        elif pasta_choice == "2":
+            pasta_choice = "Tagliatelle"
+            print("Yummy! You chose Tagliatelle.\n")
+            return pasta_choice
+        elif pasta_choice == "3":
+            pasta_choice = "Penne"
+            print("Yummy! You chose Penne.\n")
+            return pasta_choice
+        elif pasta_choice == "4":
+            pasta_choice = "Fettuccine"
+            print("Yummy! You chose Fettuccine.\n")
+            return pasta_choice
+        elif pasta_choice == "5":
+            pasta_choice = "Rigatoni"
+            print("Yummy! You chose Rigatoni.\n")
+            return pasta_choice
+        else:
+            print("Invalid choice, please enter a number between 1-5\n")
+            continue
+
+
+get_pasta()
