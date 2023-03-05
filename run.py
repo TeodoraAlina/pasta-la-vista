@@ -2,6 +2,7 @@
 Import libraries to support the application
 """
 import re
+import sys
 import gspread
 from google.oauth2.service_account import Credentials
 from tabulate import tabulate
@@ -181,3 +182,40 @@ def get_pasta():
 
 
 get_pasta()
+
+
+def place_order():
+    """
+    Provides steps for user to order
+    """
+
+
+def main():
+    """
+    Execute first fuctionality for the user interface
+    Greet customer
+    """
+    clear()
+    print('Welcome to Pasta la Vista,')
+    print('where all you can eat is delicious pasta!\n')
+    print('We will first need some information from you')
+    print('then you can proceed to order.\n')
+    print('Choose wisely, it is heard that our pasta')
+    print('...can become addictive.\n')
+    print("Main Menu")
+    print("1. Place an Order")
+    print("2.Exit Ordering System\n")
+    print("Please select an option by entering a number between 1-2\n")
+    while True:
+        selection = input("Enter your choice here:\n").strip()
+        if selection == "1":
+            place_order()
+        elif selection == "2":
+            sys.exit("Sad to see you go! See you soon though..."
+                     "Have a wonderful day!\n")
+        else:
+            print("Invalid choice, please enter a number between 1-2\n")
+            continue
+
+
+main()
