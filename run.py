@@ -1,3 +1,6 @@
+"""
+Import libraries to support the application
+"""
 import re
 import gspread
 from google.oauth2.service_account import Credentials
@@ -14,6 +17,13 @@ CREDS = Credentials.from_service_account_file('creds.json')
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('pasta-la-vista')
+
+
+def clear():
+    """
+    Clear the screen for the next content to be shown
+    """
+    print('\033c')
 
 
 def welcome_customer():
