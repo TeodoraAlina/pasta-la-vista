@@ -173,6 +173,16 @@ def get_pasta():
     place_order()
 
 
+def update_order_worksheet(data):
+    """
+    Export provided order to external worksheet
+    """
+    orders_worksheet = SHEET.worksheet("Orders")
+    orders_worksheet.append_row(data)
+    print("Your order has been received")
+    main()
+
+
 def place_order():
     """
     Provides steps for user to order
@@ -190,8 +200,25 @@ def place_order():
         dish,
         pasta_choice
     ]
-    
-place_order()
+    print(f"Thank you {name_str.title()}! You ordered\n"
+          f"{dish} made with {pasta_choice}.\n")
+    print("Are you satisfied with your order?\n")
+    print("Please enter:\n"
+          "1. to send your order\n"
+          "2. to restart your order\n"
+          "3. to exit to Main Menu\n")
+    while True:
+        user_confirm = input("Please enter your choice here:\n").strip()
+        if user_confirm == "1":
+            update_order_worksheet(order)
+        if user_confirm == "2":
+            break
+        if user_confirm == "3":
+            main()
+        else:
+            print("Invalid choice, please enter a number between 1-3")
+            continue
+        place_order()
 
 
 def main():
