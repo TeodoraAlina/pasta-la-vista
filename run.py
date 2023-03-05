@@ -27,35 +27,34 @@ def clear():
     print('\033c')
 
 
-def welcome_customer():
-    """
-    Greet customer
-    """
-    print('Welcome to Pasta la Vista,')
-    print('where all you can eat is delicious pasta!\n')
-    print('We will first need some information from you')
-    print('then you can proceed to order.\n')
-    print('Choose wisely, it is heard that our pasta')
-    print('...can become addictive.\n')
-
-
-welcome_customer()
-
-
 def get_name():
     """
     Request and validate customer's name
     """
+    print("What would you like to do next?\n")
+    print("1. Continue to place your order")
+    print("2. Exit to Main Menu\n")
+    print("Please select an option by entering either 1 or 2\n")
+    #  While loop to provide sub-menu options
+    #  If not valid, error message asks the user to try again
+    while True:
+        selection = input("Enter your choice here:\n").strip()
+        if selection == "1":
+            break
+        elif selection == "2":
+            main()
+        else:
+            print("\nInvalid choice, please enter a number between 1-3\n")
+            continue
     while True:
         name_str = input('Please enter your name:\n')
         if name_str.isalpha():
-            break
+            print(f"Lovely name {name_str.capitalize()}, "
+                  "let's keep it going.\n")
         else:
             print("That doesn't look like a name...please, try again.\n")
-    print(f"Lovely name {name_str.capitalize()}, let's keep it going.\n")
-
-
-get_name()
+            continue
+        return name_str
 
 
 def get_address():
@@ -68,11 +67,8 @@ def get_address():
             print("It seems like you haven't entered an address,")
             print("please try again\n")
         else:
-            break
-    print("Thank you! We will deliver your order at this address.\n")
-
-
-get_address()
+            print("Thank you! We will deliver your order at this address.\n")
+        return address
 
 
 def get_tel_number():
@@ -101,9 +97,6 @@ def get_tel_number():
                   " plese try again!\n")
             continue
         return tel_number
-
-
-get_tel_number()
 
 
 def get_menu():
@@ -139,9 +132,7 @@ def get_menu():
         else:
             print("Invalid choice, please enter a number between 1-5")
             continue
-
-
-get_menu()
+    place_order()
 
 
 def get_pasta():
@@ -179,15 +170,28 @@ def get_pasta():
         else:
             print("Invalid choice, please enter a number between 1-5\n")
             continue
-
-
-get_pasta()
+    place_order()
 
 
 def place_order():
     """
     Provides steps for user to order
     """
+    name_str = get_name()
+    address = get_address()
+    tel_number = get_tel_number()
+    dish = get_menu()
+    pasta_choice = get_pasta()
+
+    order = [
+        name_str.title(),
+        address,
+        tel_number,
+        dish,
+        pasta_choice
+    ]
+    
+place_order()
 
 
 def main():
@@ -218,4 +222,5 @@ def main():
             continue
 
 
-main()
+if __name__ == "__main__":
+    main()
