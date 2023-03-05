@@ -84,7 +84,7 @@ def get_tel_number():
         tel_number = input("Enter your telephone number here:\n")
         if validate_tel_num(tel_number):
             print(f"Thank you, we will use {tel_number} to contact you"
-                  " when we get at you location\n")
+                  " when we get at your location.\n")
         else:
             print("Invalid number. You must enter 11 digits, starting with 07,"
                   " plese try again!\n")
@@ -107,6 +107,27 @@ def get_menu():
     menu = SHEET.worksheet('Menu').get_all_values()
     print(tabulate(
         menu, headers='firstrow', tablefmt='fancy_grid'))
+
+    while True:
+        dish = input("Enter your choice here:\n").strip()
+        if dish == "1":
+            print("Nice choice! Cacio e pepe it is!\n")
+            return "Cacio e pepe"
+        elif dish == "2":
+            print("Nice choice! Carbonara it is!\n")
+            return "Carbonara"
+        elif dish == "3":
+            print("Nice choice! Bolognese it is!\n")
+            return "Bolognese"
+        elif dish == "4":
+            print("Nice choice! Al Pomodoro it is!\n")
+            return "Al Pomodoro"
+        elif dish == "5":
+            print("Nice choice! Limone e Pepe it is!\n")
+            return "Limone e Pepe"
+        else:
+            print("Invalid choice, please enter a number between 1-5")
+            continue
 
 
 get_menu()
