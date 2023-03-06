@@ -42,6 +42,8 @@ def get_name():
     while True:
         selection = input("Enter your choice here:\n").strip()
         if selection == "1":
+            print("Amazing! We will first need some personal "
+                  "details from you.\n")
             break
         elif selection == "2":
             main()
