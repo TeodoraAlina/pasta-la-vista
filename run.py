@@ -53,7 +53,7 @@ def get_name():
     while True:
         name_str = input('Please enter your name:\n')
         if name_str.isalpha():
-            print(f"Lovely name {name_str.capitalize()}, "
+            print(f"Lovely name {name_str.title()}, "
                   "let's keep it going.\n")
         else:
             print("That doesn't look like a name...please, try again.\n")
@@ -193,6 +193,70 @@ def get_pasta():
     place_order()
 
 
+def get_quantity(dish, pasta_choice):
+    """
+    User can choose how many dishes
+    would they like.
+    """
+    print("How many of this yummy dish would you like?\n"
+          "Plese enter a number between 1-10 below\n"
+          "or enter:\n"
+          "(R) to restart order\n"
+          "(E) to Main Menu.\n")
+    while True:
+        quantity = input("Enter your choice here:\n")
+        if quantity == "1":
+            print(f"Thank you! You ordered {quantity} {dish} "
+                  f"made with {pasta_choice} pasta.\n")
+            return int(quantity)
+        elif quantity == "2":
+            print(f"Thank you! You ordered {quantity} {dish} "
+                  f"made with {pasta_choice} pasta.\n")
+            return int(quantity)
+        elif quantity == "3":
+            print(f"Thank you! You ordered {quantity} {dish} "
+                  f"made with {pasta_choice} pasta.\n")
+            return int(quantity)
+        elif quantity == "4":
+            print(f"Thank you! You ordered {quantity} {dish} "
+                  f"made with {pasta_choice} pasta.\n")
+            return int(quantity)
+        elif quantity == "5":
+            print(f"Thank you! You ordered {quantity} {dish} "
+                  f"made with {pasta_choice} pasta.\n")
+            return int(quantity)
+        elif quantity == "6":
+            print(f"Thank you! You ordered {quantity} {dish} "
+                  f"made with {pasta_choice} pasta.\n")
+            return int(quantity)
+        elif quantity == "7":
+            print(f"Thank you! You ordered {quantity} {dish} "
+                  f"made with {pasta_choice} pasta.\n")
+            return int(quantity)
+        elif quantity == "8":
+            print(f"Thank you! You ordered {quantity} {dish} "
+                  f"made with {pasta_choice} pasta.\n")
+            return int(quantity)
+        elif quantity == "9":
+            print(f"Thank you! You ordered {quantity} {dish} "
+                  f"made with {pasta_choice} pasta.\n")
+            return int(quantity)
+        elif quantity == "10":
+            print(f"Thank you! You ordered {quantity} {dish} "
+                  f"made with {pasta_choice} pasta.\n")
+            return int(quantity)
+        elif quantity == "R":
+            break
+        elif quantity == "E":
+            main()
+        else:
+            print("Invalid choice, please enter a number between 1-10\n"
+                  "or R to restart order\n"
+                  "E to exit to Main Menu\n")
+            continue
+        place_order()
+
+
 def update_order_worksheet(data):
     """
     Export provided order to external worksheet
@@ -215,13 +279,15 @@ def place_order():
     tel_number = get_tel_number()
     dish = get_menu()
     pasta_choice = get_pasta()
+    quantity = get_quantity(dish, pasta_choice)
 
     order = [
         name_str.title(),
         address,
         tel_number,
         dish,
-        pasta_choice
+        pasta_choice,
+        quantity
     ]
     print(f"Thank you {name_str.title()}! You ordered\n"
           f"{dish} made with {pasta_choice}.\n")
@@ -235,7 +301,7 @@ def place_order():
         if user_confirm == "1":
             update_order_worksheet(order)
         if user_confirm == "2":
-            break
+            place_order()
         if user_confirm == "3":
             main()
         else:
