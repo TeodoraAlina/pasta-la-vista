@@ -113,9 +113,12 @@ def get_menu():
     menu = SHEET.worksheet('Menu').get_all_values()
     print(tabulate(
         menu, headers='firstrow', tablefmt='fancy_grid'))
-
+    print("Please enter a number between 1-5\n"
+          "or enter:\n"
+          "(R) to restart order\n"
+          "(E) to exit to Main Menu\n")
     while True:
-        dish = input("Enter your choice here:\n").strip()
+        dish = input("Enter your choice here:\n").capitalize()
         if dish == "1":
             print("Nice choice! Cacio e pepe it is!\n")
             return "Cacio e pepe"
@@ -131,6 +134,10 @@ def get_menu():
         elif dish == "5":
             print("Nice choice! Limone e Pepe it is!\n")
             return "Limone e Pepe"
+        elif dish == "R":
+            break
+        elif dish == "E":
+            main()
         else:
             print("Invalid choice, please enter a number between 1-5")
             continue
@@ -148,6 +155,10 @@ def get_pasta():
     pasta = SHEET.worksheet("Pasta").get_all_values()
     print(tabulate(
         pasta, headers='firstrow', tablefmt='fancy_grid'))
+    print("Please enter a number between 1-5\n"
+          "or enter:\n"
+          "(R) to restart order\n"
+          "(E) to exit to Main Menu\n")
     while True:
         pasta_choice = input("Enter your choice here:\n").strip()
         if pasta_choice == "1":
@@ -170,6 +181,10 @@ def get_pasta():
             pasta_choice = "Rigatoni"
             print("Yummy! You chose Rigatoni.\n")
             return pasta_choice
+        elif pasta_choice == "R":
+            break
+        elif pasta_choice == "E":
+            main()
         else:
             print("Invalid choice, please enter a number between 1-5\n")
             continue
