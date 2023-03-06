@@ -29,7 +29,9 @@ def clear():
 
 def get_name():
     """
-    Request and validate customer's name
+    Request and validate customer's name.
+    User can choose to whether exit to main menu
+    or continue to place the order.
     """
     print("What would you like to do next?\n")
     print("1. Continue to place your order")
@@ -138,7 +140,8 @@ def get_menu():
 def get_pasta():
     """
     Provide a table for types of pasta.
-    Request user to input choice.
+    Request user to input a choice between 1-5.
+    Use table rows for this data.
     """
     print("We have different types of pasta for you to choose from")
     print("Which one would you like to choose?\n")
@@ -185,7 +188,10 @@ def update_order_worksheet(data):
 
 def place_order():
     """
-    Provides steps for user to order
+    Provides steps for user to order.
+    Functions are called in a logical order.
+    User can choose whether to restart order,
+    send order or exit to Main Menu.
     """
     name_str = get_name()
     address = get_address()
