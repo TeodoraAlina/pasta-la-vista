@@ -257,6 +257,18 @@ def get_quantity(dish, pasta_choice):
         place_order()
 
 
+def get_price(dish, quantity):
+    """
+    Calculate the price of the order.
+    """
+    order_price = SHEET.worksheet("Menu").get_all_values()
+    if dish == ("Cacio e Pepe"):
+        price = quantity * order_price.at[0, 'Price']
+        print(f"The price of your order is {price}")
+        return price
+        print(price)
+
+
 def update_order_worksheet(data):
     """
     Export provided order to external worksheet
@@ -280,6 +292,7 @@ def place_order():
     dish = get_menu()
     pasta_choice = get_pasta()
     quantity = get_quantity(dish, pasta_choice)
+    price = get_price(dish, quantity)
 
     order = [
         name_str.title(),
@@ -287,10 +300,11 @@ def place_order():
         tel_number,
         dish,
         pasta_choice,
-        quantity
+        quantity,
+        price
     ]
     print(f"Thank you {name_str.title()}! You ordered\n"
-          f"{dish} made with {pasta_choice}.\n")
+          f"{dish} made with {pasta_choice} for {price}\n")
     print("Are you satisfied with your order?\n")
     print("Please enter:\n"
           "1. to send your order\n"
