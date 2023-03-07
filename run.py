@@ -122,8 +122,8 @@ def get_menu():
     while True:
         dish = input("Enter your choice here:\n").capitalize()
         if dish == "1":
-            print("Nice choice! Cacio e pepe it is!\n")
-            return "Cacio e pepe"
+            print("Nice choice! Cacio e Pepe it is!\n")
+            return "Cacio e Pepe"
         elif dish == "2":
             print("Nice choice! Carbonara it is!\n")
             return "Carbonara"
@@ -261,12 +261,10 @@ def get_price(dish, quantity):
     """
     Calculate the price of the order.
     """
-    order_price = SHEET.worksheet("Menu").get_all_values()
-    if dish == ("Cacio e Pepe"):
-        price = quantity * order_price.at[0, 'Price']
-        print(f"The price of your order is {price}")
+    order_price = SHEET.worksheet("Menu").get_all_records()
+    if dish == "Cacio e Pepe":
+        price = quantity * order_price[0]['Price']
         return price
-        print(price)
 
 
 def update_order_worksheet(data):
@@ -303,8 +301,8 @@ def place_order():
         quantity,
         price
     ]
-    print(f"Thank you {name_str.title()}! You ordered\n"
-          f"{dish} made with {pasta_choice} for {price}\n")
+    print(f"Thank you {name_str.title()}! You ordered "
+          f"{dish} made with {pasta_choice} for €{price}.\n")
     print("Are you satisfied with your order?\n")
     print("Please enter:\n"
           "1. to send your order\n"
