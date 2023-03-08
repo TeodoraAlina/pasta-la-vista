@@ -211,62 +211,34 @@ def get_quantity(dish, pasta_choice):
     User can choose how many dishes
     would they like.
     """
-    print("How many of this yummy dish would you like?\n"
-          "Plese enter a number between 1-10 below\n"
-          "or enter:\n"
-          "(R) to restart order\n"
-          "(E) to Main Menu.\n")
+    prompt = ("Please enter a number between 1-10 below\n"
+              "or enter:\n"
+              "(R) to restart order\n"
+              "(E) to Main Menu.\n")
+    print("How many of this yummy dish would you like?\n")
+    print(prompt)
     while True:
-        quantity = input("Enter your choice here:\n")
-        if quantity == "1":
-            print(f"Thank you! You ordered {quantity} {dish} "
-                  f"made with {pasta_choice} pasta.\n")
-            return int(quantity)
-        elif quantity == "2":
-            print(f"Thank you! You ordered {quantity} {dish} "
-                  f"made with {pasta_choice} pasta.\n")
-            return int(quantity)
-        elif quantity == "3":
-            print(f"Thank you! You ordered {quantity} {dish} "
-                  f"made with {pasta_choice} pasta.\n")
-            return int(quantity)
-        elif quantity == "4":
-            print(f"Thank you! You ordered {quantity} {dish} "
-                  f"made with {pasta_choice} pasta.\n")
-            return int(quantity)
-        elif quantity == "5":
-            print(f"Thank you! You ordered {quantity} {dish} "
-                  f"made with {pasta_choice} pasta.\n")
-            return int(quantity)
-        elif quantity == "6":
-            print(f"Thank you! You ordered {quantity} {dish} "
-                  f"made with {pasta_choice} pasta.\n")
-            return int(quantity)
-        elif quantity == "7":
-            print(f"Thank you! You ordered {quantity} {dish} "
-                  f"made with {pasta_choice} pasta.\n")
-            return int(quantity)
-        elif quantity == "8":
-            print(f"Thank you! You ordered {quantity} {dish} "
-                  f"made with {pasta_choice} pasta.\n")
-            return int(quantity)
-        elif quantity == "9":
-            print(f"Thank you! You ordered {quantity} {dish} "
-                  f"made with {pasta_choice} pasta.\n")
-            return int(quantity)
-        elif quantity == "10":
-            print(f"Thank you! You ordered {quantity} {dish} "
-                  f"made with {pasta_choice} pasta.\n")
-            return int(quantity)
-        elif quantity == "R":
-            break
-        elif quantity == "E":
-            main()
-        else:
-            print("Invalid choice, please enter a number between 1-10\n"
-                  "or R to restart order\n"
-                  "E to exit to Main Menu\n")
-            continue
+        quantity_input = input("Enter your choice here:\n").strip()
+        try:
+            quantity = int(quantity_input)
+
+            if 1 < quantity <= 10:
+                print(f"Thank you! You ordered {quantity} {dish} "
+                      f"made with {pasta_choice} pasta.\n")
+                return quantity
+            else:
+                print("Invalid choice.")
+                print(prompt)
+                continue
+        except ValueError():
+            if quantity_input.upper() == "R":
+                place_order()
+            elif quantity_input.upper() == "E":
+                main()
+            else:
+                print("Invalid choice.")
+                print(prompt)
+                continue
         place_order()
 
 
@@ -315,7 +287,7 @@ def place_order():
         price
     ]
     print(f"Thank you {name_str.title()}! You ordered "
-          f"{dish} made with {pasta_choice} for €{price}.\n")
+          f"{quantity} {dish} made with {pasta_choice} for €{price}.\n")
     print("Are you satisfied with your order?\n")
     print("Please enter:\n"
           "1. to send your order\n"
@@ -349,7 +321,7 @@ def main():
     print('...can become addictive.\n')
     print("Main Menu")
     print("1. Place an Order")
-    print("2.Exit Ordering System\n")
+    print("2. Exit Ordering System\n")
     print("Please select an option by entering a number between 1-2\n")
     while True:
         selection = input("Enter your choice here:\n").strip()
