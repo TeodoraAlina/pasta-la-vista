@@ -70,6 +70,7 @@ def get_address():
         if address == '':
             print("It seems like you haven't entered an address,")
             print("please try again\n")
+            continue
         else:
             print("Thank you! We will deliver your order at this address.\n")
         return address
@@ -92,13 +93,13 @@ def get_tel_number():
     #  While loop to request user inputs valid contact phone number
     #  If not valid, error message asks the user to try again
     while True:
-        tel_number = input("Enter your telephone number here:\n")
+        tel_number = input("Enter your telephone number here(11 digits, "
+                           "starting with 07):\n")
         if validate_tel_num(tel_number):
             print(f"Thank you, we will use {tel_number} to contact you"
                   " when we get at your location.\n")
         else:
-            print("Invalid number. You must enter 11 digits, starting with 07,"
-                  " plese try again!\n")
+            print("Invalid number, plese try again!\n")
             continue
         return tel_number
 
@@ -110,9 +111,20 @@ def get_menu():
     Use table rows for this data
     Request user to input a choice between 1-5
     """
+    menu = SHEET.worksheet('Menu').get_all_values()
+    return menu
+
+
+def get_order():
+    """
+    Provides the menu for the user
+    Receives data from external spreadsheet
+    Use table rows for this data
+    Request user to input a choice between 1-5
+    """
     print("Here are our delicious pasta dishes.")
     print("Which one would you like to enjoy?\n")
-    menu = SHEET.worksheet('Menu').get_all_values()
+    menu = get_menu()
     print(tabulate(
         menu, headers='firstrow', tablefmt='fancy_grid'))
     print("Please enter a number between 1-5\n"
@@ -263,7 +275,7 @@ def get_price(dish, quantity):
     """
     order_price = SHEET.worksheet("Menu").get_all_records()
     if dish == "Cacio e Pepe":
-        price = quantity * order_price[0]['Price']
+        price = quantity * order_price[0]['Price(€)']
         return price
 
 
@@ -287,7 +299,7 @@ def place_order():
     name_str = get_name()
     address = get_address()
     tel_number = get_tel_number()
-    dish = get_menu()
+    dish = get_order()
     pasta_choice = get_pasta()
     quantity = get_quantity(dish, pasta_choice)
     price = get_price(dish, quantity)
