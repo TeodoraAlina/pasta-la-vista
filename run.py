@@ -82,16 +82,6 @@ def get_tel_number():
     User must enter 11 digit numbers starting with 07
     """
     print("Please enter your telephone number.\n")
-
-    def validate_tel_num(tel_number):
-        """
-        Validate user telephone number
-        using RE compile method
-        """
-        telnum_pattern = re.compile(r"^(07\d{9}|447\d{9})$")
-        return telnum_pattern.match(tel_number)
-    #  While loop to request user inputs valid contact phone number
-    #  If not valid, error message asks the user to try again
     while True:
         tel_number = input("Enter your telephone number here(11 digits, "
                            "starting with 07):\n")
@@ -102,6 +92,17 @@ def get_tel_number():
             print("Invalid number, plese try again!\n")
             continue
         return tel_number
+
+
+def validate_tel_num(tel_number):
+    """
+    Validate user telephone number
+    using RE compile method
+    """
+    telnum_pattern = re.compile(r"^(07\d{9}|447\d{9})$")
+    return telnum_pattern.match(tel_number)
+    #  While loop to request user inputs valid contact phone number
+    #  If not valid, error message asks the user to try again
 
 
 def get_menu():
