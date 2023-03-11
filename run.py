@@ -112,7 +112,7 @@ def get_menu():
     Use table rows for this data
     Request user to input a choice between 1-5
     """
-    menu = SHEET.worksheet('Menu').get_all_values()
+    menu = SHEET.worksheet('Menu').get_all_records()
     return menu
 
 
@@ -249,6 +249,18 @@ def get_price(dish, quantity):
     order_price = SHEET.worksheet("Menu").get_all_records()
     if dish == "Cacio e Pepe":
         price = quantity * order_price[0]['Price(€)']
+        return price
+    if dish == "Carbonara":
+        price = quantity * order_price[1]['Price(€)']
+        return price
+    if dish == "Bolognese":
+        price = quantity * order_price[2]['Price(€)']
+        return price
+    if dish == "Al Pomodoro":
+        price = quantity * order_price[3]['Price(€)']
+        return price
+    if dish == "Limone e Pepe":
+        price = quantity * order_price[4]['Price(€)']
         return price
 
 
