@@ -3,6 +3,7 @@ Import libraries to support the application
 """
 import re
 import sys
+import time
 import gspread
 from google.oauth2.service_account import Credentials
 from tabulate import tabulate
@@ -320,13 +321,24 @@ def place_order():
     User can choose whether to restart order,
     send order or exit to Main Menu.
     """
+    clear()
     name_str = get_name()
     address = get_address()
     tel_number = get_tel_number()
+    time.sleep(3)
+    clear()
     dish = get_order()
+    time.sleep(2)
+    clear()
     pasta_choice = get_pasta()
+    time.sleep(2)
+    clear()
     quantity = get_quantity(dish, pasta_choice)
+    time.sleep(2)
+    clear()
     price = get_price(dish, quantity)
+    time.sleep(2)
+    clear()
 
     order = [
         name_str.title(),
@@ -353,7 +365,7 @@ def place_order():
         if user_confirm == "3":
             main()
         else:
-            print("Invalid choice, please enter a number between 1-3")
+            print("Invalid choice, please enter a number between 1-3\n")
             continue
         place_order()
 
