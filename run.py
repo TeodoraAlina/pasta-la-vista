@@ -32,6 +32,13 @@ def get_name():
     Request and validate customer's name.
     User can choose to whether exit to main menu
     or continue to place the order.
+    Args:
+        Request user to input name and strip whitespaces
+        If statements validates the input using isalpha()
+        Else requests the user to try again
+    Returns:
+           Confirm statement is valid using print statement
+           name_str used within place_order function
     """
     print("What would you like to do next?\n")
     print("1. Continue to place your order")
@@ -51,7 +58,7 @@ def get_name():
             print("\nInvalid choice, please enter a number between 1-3\n")
             continue
     while True:
-        name_str = input('Please enter your name:\n')
+        name_str = input('Please enter your name:\n').strip()
         if name_str.isalpha():
             print(f"Lovely name {name_str.title()}, "
                   "let's keep it going.\n")
@@ -64,9 +71,15 @@ def get_name():
 def get_address():
     """
     Request user's address
+    Args:
+        Request user to input address and strip whitespaces
+        If statement checks for blank space validation
+        and requests the user to try again
+    Returns:
+           Print statement confirming input is valid
     """
     while True:
-        address = input('Please enter your address for delivery:\n')
+        address = input('Please enter your address for delivery:\n').strip()
         if address == '':
             print("It seems like you haven't entered an address,")
             print("please try again\n")
@@ -79,9 +92,16 @@ def get_address():
 def get_tel_number():
     """
     Request and validate customer telephone number
-    User must enter 11 digit numbers starting with 07
+    Args:
+        While True: user must enter 11 digit numbers starting with 07
+        validate_tel_number used to validate tel_number variable
+        using Re pattern match
+    Return:
+          Confirm input is valid using print statement
     """
     print("Please enter your telephone number.\n")
+    #  While loop to request user inputs valid contact phone number
+    #  If not valid, error message asks the user to try again
     while True:
         tel_number = input("Enter your telephone number here(11 digits, "
                            "starting with 07):\n")
@@ -101,8 +121,6 @@ def validate_tel_num(tel_number):
     """
     telnum_pattern = re.compile(r"^(07\d{9}|447\d{9})$")
     return telnum_pattern.match(tel_number)
-    #  While loop to request user inputs valid contact phone number
-    #  If not valid, error message asks the user to try again
 
 
 def get_menu():
@@ -119,9 +137,13 @@ def get_menu():
 def get_order():
     """
     Provides the menu for the user
-    Receives data from external spreadsheet
-    Use table rows for this data
-    Request user to input a choice between 1-5
+    Args:
+        Receives data from external spreadsheet
+        Use table rows for this data
+        While loop requests user to input a choice between 1-5
+        Else requests the user to try again.
+    Returns:
+           Print statement confirming input is valid
     """
     print("Here are our delicious pasta dishes.")
     print("Which one would you like to enjoy?\n")
@@ -163,7 +185,13 @@ def get_pasta():
     """
     Provide a table for types of pasta.
     Request user to input a choice between 1-5.
-    Use table rows for this data.
+    Args:
+        Receive data from external spreadsheet
+        Use table rows for this data
+        While loop requests user to input a number between 1-5
+        Else requests the user to try again.
+    Returns:
+           Confirm user input using print statement
     """
     print("We have different types of pasta for you to choose from")
     print("Which one would you like to choose?\n")
@@ -209,7 +237,12 @@ def get_pasta():
 def get_quantity(dish, pasta_choice):
     """
     User can choose how many dishes
-    would they like.
+    would they like to have.
+    Args:
+        While loop requests user to input a choice between 1-10
+        If valid, order is confirmed using print statement
+        Else requests the user to try again
+        Variable prompt used for printing repetitive print statement.
     """
     prompt = ("Please enter a number between 1-10 below\n"
               "or enter:\n"
@@ -245,6 +278,12 @@ def get_quantity(dish, pasta_choice):
 def get_price(dish, quantity):
     """
     Calculate the price of the order.
+    Args:
+        dish: user choice of dish from menu
+        quantity: user choice of number of dishes between 1-10
+        If statement used to multiply the price of the dish * quantity
+    Returns:
+           f string with calculated price used within place_order function
     """
     order_price = SHEET.worksheet("Menu").get_all_records()
     if dish == "Cacio e Pepe":
@@ -322,7 +361,13 @@ def place_order():
 def main():
     """
     Execute first fuctionality for the user interface
-    Greet customer
+    Greet customer and provide a Main Menu with 2 choices.
+    Args:
+        Request user to input a number between 1-2
+        If statement executes a function depending on input choice
+        1. place_order function
+        2. exit system using sys.exit()
+        Else requests the user to try again.
     """
     clear()
     print('Welcome to Pasta la Vista,')
