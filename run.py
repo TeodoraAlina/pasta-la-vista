@@ -58,6 +58,8 @@ def get_name():
         else:
             print("\nInvalid choice, please enter a number between 1-3\n")
             continue
+    # If user chooses option 1, while loop is used to request user's name
+    # If not valid, error message asks the user to try again
     while True:
         name_str = input('Please enter your name:\n').strip()
         if name_str.isalpha():
@@ -146,8 +148,11 @@ def get_order():
     Returns:
            Print statement confirming input is valid
     """
+    # Print statement to inform the user of what content is displayed
     print("Here are our delicious pasta dishes.")
     print("Which one would you like to enjoy?\n")
+    # Printing the menu imported in the get_menu
+    # function from external spreadsheet
     menu = get_menu()
     print(tabulate(
         menu, headers='firstrow', tablefmt='fancy_grid'))
@@ -155,6 +160,9 @@ def get_order():
           "or enter:\n"
           "(R) to restart order\n"
           "(E) to exit to Main Menu\n")
+    # While loop used to request user to input valid dish choice between 1-5,
+    # to restart the order or to exit to Main Menu
+    # If not valid, error message asks the user to try again
     while True:
         dish = input("Enter your choice here:\n").capitalize()
         if dish == "1":
@@ -194,11 +202,18 @@ def get_pasta():
     Returns:
            Confirm user input using print statement
     """
+    # Print statement to inform the user of what content is displayed
     print("We have different types of pasta for you to choose from")
     print("Which one would you like to choose?\n")
+    # Printing the pasta menu imported from external spreadsheet
     pasta = SHEET.worksheet("Pasta").get_all_values()
     print(tabulate(
         pasta, headers='firstrow', tablefmt='fancy_grid'))
+    # While loop used to request user to input
+    # valid types of pasta between 1-5,
+    # or to restart the order
+    # or to exit to Main Menu
+    # If not valid, error message asks the user to try again
     print("Please enter a number between 1-5\n"
           "or enter:\n"
           "(R) to restart order\n"
@@ -244,11 +259,17 @@ def get_quantity(dish, pasta_choice):
         If valid, order is confirmed using print statement
         Else requests the user to try again
         Variable prompt used for printing repetitive print statement.
+    Returns:
+            quantity used within place_order function
     """
     prompt = ("Please enter a number between 1-10 below\n"
               "or enter:\n"
               "(R) to restart order\n"
               "(E) to Main Menu.\n")
+    # While loop requests user to input valid quantity between 1-10
+    # or to restart the order
+    # or to exit to Main Menu
+    # If not valid, error message asks the user to try again
     print("How many of this yummy dish would you like?\n")
     print(prompt)
     while True:
@@ -308,9 +329,15 @@ def update_order_worksheet(data):
     """
     Export provided order to external worksheet
     """
+    #  Identifies the applicable worksheet from the external spreadsheet
+    #  Appends the users order to the last row of that worksheet
+    #  Print statement confirms the order has been sent to the kitchen
+    #  Returns user back to the Main Menu
     orders_worksheet = SHEET.worksheet("Orders")
     orders_worksheet.append_row(data)
-    print("Your order has been received")
+    print("We got your order!\n"
+          "Now relax and we'll be there with your delicious pasta "
+          "in maximum 30 minutes!\n")
     main()
 
 
@@ -321,25 +348,42 @@ def place_order():
     User can choose whether to restart order,
     send order or exit to Main Menu.
     """
+    # Clear screen for next functions
     clear()
+    # Request the user name, address and telephone number
     name_str = get_name()
     address = get_address()
     tel_number = get_tel_number()
+    # Sets a delay to allow time for user to read
     time.sleep(3)
+    # Clear screen for next functions
     clear()
+    # Request and return user choice of dish
     dish = get_order()
+    # Sets a delay to allow time for user to read
     time.sleep(2)
+    # Clear screen for next functions
     clear()
+    # Request and return user choice of pasta
     pasta_choice = get_pasta()
+    # Sets a delay to allow time for user to read
     time.sleep(2)
+    # Clear screen for next functions
     clear()
+    # Request and return user choice of quantity
     quantity = get_quantity(dish, pasta_choice)
+    # Sets a delay to allow time for user to read
     time.sleep(2)
+    # Clear screen for next functions
     clear()
+    # Request and return the price of the order
     price = get_price(dish, quantity)
+    # Sets a delay to allow time for user to read
     time.sleep(2)
+    # Clear screen for next functions
     clear()
 
+    # List containing the returned values from functions to confirm order
     order = [
         name_str.title(),
         address,
@@ -349,8 +393,15 @@ def place_order():
         quantity,
         price
     ]
+
+    # Confirm order for the customer and provide order reference
     print(f"Thank you {name_str.title()}! You ordered "
           f"{quantity} {dish} made with {pasta_choice} for €{price}.\n")
+    # While loop used to request user to either
+    # send the confirmed order
+    # restart the order
+    # or exit to Main Menu
+    # If input is not valid, error message asks the user to try again
     print("Are you satisfied with your order?\n")
     print("Please enter:\n"
           "1. to send your order\n"
@@ -381,6 +432,7 @@ def main():
         2. exit system using sys.exit()
         Else requests the user to try again.
     """
+    # Clear previous content to print welcome message and Main Menu
     clear()
     print('Welcome to Pasta la Vista,')
     print('where all you can eat is delicious pasta!\n')
@@ -392,6 +444,8 @@ def main():
     print("1. Place an Order")
     print("2. Exit Ordering System\n")
     print("Please select an option by entering a number between 1-2\n")
+    # While loop used to request user to enter valid inputs between 1-2
+    # If not valid, error message asks the user to try again
     while True:
         selection = input("Enter your choice here:\n").strip()
         if selection == "1":
@@ -405,4 +459,5 @@ def main():
 
 
 if __name__ == "__main__":
+    # Execute main Python function
     main()
