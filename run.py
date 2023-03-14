@@ -338,6 +338,8 @@ def update_order_worksheet(data):
     print("We got your order!\n"
           "Now relax and we'll be there with your delicious pasta "
           "in maximum 30 minutes!\n")
+    # Sets a delay to allow time for user to read
+    time.sleep(4.5)
     main()
 
 
