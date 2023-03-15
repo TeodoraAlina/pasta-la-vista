@@ -57,3 +57,30 @@ The website will contain a simple interface that immediately greets the customer
 If the customer makes an error whilst navigating through the system, a message will appear guiding them on the steps to take, whilst also having the ability to navigate to the Main Menu and exit the system. Furthermore, customers will have the ability to restart the order from within the interface.
 ***
 
+### Features
+### Existing Features 
+### Main Menu
+* A welcome message greets the customer.
+* The user is informed with the next step.
+* The main menu is displayed when the application starts. To keep the interface simple to use, the menu divides the functionality into two options: 1. Place Order, 2. Exit Ordering System
+![Main Menu](documentation/images/main-menu.png)
+* The user has to choose between the two options. If the user's input is invalid then an error message will appear to inform and invite the user to try again.
+![Main Menu error message](documentation/images/main-menu-error-message.png)
+* The error message appears until the user's input is valid. If the user chooses the option two, then the system is exited.
+* If the user chooses option one, then the order process starts.
+![Place Order](documentation/images/place-order.png)
+* From there, the user can either choose to go back to the Main Menu or continue to place the order.
+### Place Order
+### Customer details 
+* The user is informed that first some details will be needed. The user is asked to provide the name.
+![Name](documentation/images/name.png)
+The user has to provide only alphabetical input. If this fails, then an error message appears and asks the user to try again.
+![Name Error](documentation/images/name-error.png)
+* After the name is provided, the user is asked for the address of delivery.
+[Address](documentation/images/address.png)
+* If the user enters a space instead of the address, then an error message appears and asks the user to try again.
+[Address Error](documentation/images/address-error.png)
+
+
+
+
