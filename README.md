@@ -51,3 +51,9 @@ The command-line application will consist of:
 * A thank you message and the time for the order will appear.
 ***
 
+### Skeleton
+The website will contain a simple interface that immediately greets the customers and takes them through the process with minimal inputs.
+
+If the customer makes an error whilst navigating through the system, a message will appear guiding them on the steps to take, whilst also having the ability to navigate to the Main Menu and exit the system. Furthermore, customers will have the ability to restart the order from within the interface.
+***
+
