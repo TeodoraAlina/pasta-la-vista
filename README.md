@@ -10,6 +10,15 @@ You can view the GitHub repository here - [TeodoraAlina/pasta-la-vista](https://
 ## User Experience (UX)
 
 ### Strategy
+* The application will provide a way for ordering from the restaurant.
+* The application will collect data for the restaurant about orders and customers details.
+* Customers will be greeted when entering the application.
+* Customers will have multiple options of dishes and pasta types to order from.
+* Customers will be able to order to a maximum of 10 dishes of the same dish.
+* Provide the price of the order for the customer.
+* Provide the time when the order will arrive at the customer's place.
+* The order will be confirmed before being sent to the restaurant.
+* The restaurant will be provided with the orders details on a spreadsheet.
 
 ### User Stories
 As a customer I want to be able to:
@@ -19,7 +28,7 @@ As a customer I want to be able to:
 * Start placing an order with ease.
 * Find out what dishes I can order.
 * Find out what types of pasta I can choose from my dish.
-* Order multiple dishes.
+* Order more of the same dish.
 * Restart the order before placing it, in case I did a mistake during the order.
 * Be informed in how much time the order will be at my place.
 
@@ -27,4 +36,6 @@ As the owner I want to be able to:
 * Provide a way for my customers to eat from the restaurant anywhere they like.
 * Have stored data of orders and customer details so I can improve my business.
 ***
+
+### Structure
 
