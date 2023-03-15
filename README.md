@@ -19,12 +19,12 @@ You can view the GitHub repository here - [TeodoraAlina/pasta-la-vista](https://
 * Provide the time when the order will arrive at the customer's place.
 * The order will be confirmed before being sent to the restaurant.
 * The restaurant will be provided with the orders details on a spreadsheet.
+***
 
 ### User Stories
 As a customer I want to be able to:
 * Easily determine the purpose of the application.
 * Be greeted when entering the application.
-* Find out about the restaurant.
 * Start placing an order with ease.
 * Find out what dishes I can order.
 * Find out what types of pasta I can choose from my dish.
@@ -38,4 +38,16 @@ As the owner I want to be able to:
 ***
 
 ### Structure
+The command-line application will consist of:
+* The customer will be welcomed to the CLI (command-line interface) with a message from Pasta la Vista restaurant.
+* The customer will be announced about the first step of the order.
+* The customer will be asked to provide name, address and telephone number.
+* The customer will be provided with the menu.
+* The customer has to choose an item from the menu.
+* The customer will be provided with the types of pasta that the restaurant has.
+* The customer has to choose a type of pasta for his dish.
+* Confirmation of the order will be provided, asking the user if they would like to send the order, restart it or exit to the Main Menu.
+* If the user chooses to send the order, then the order will be placed and the Google sheet will be updated with the new order for the restaurant.
+* A thank you message and the time for the order will appear.
+***
 
