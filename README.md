@@ -77,9 +77,40 @@ If the customer makes an error whilst navigating through the system, a message w
 The user has to provide only alphabetical input. If this fails, then an error message appears and asks the user to try again.
 ![Name Error](documentation/images/name-error.png)
 * After the name is provided, the user is asked for the address of delivery.
-[Address](documentation/images/address.png)
+![Address](documentation/images/address.png)
 * If the user enters a space instead of the address, then an error message appears and asks the user to try again.
-[Address Error](documentation/images/address-error.png)
+![Address Error](documentation/images/address-error.png)
+* A message appears confirming that the address has been received, then the user is asked for the telephone number.
+![Telephone Number](documentation/images/telephone-number.png)
+* The user has to enter a number with 11 digits and starting with 07, if that fails, an error message appears and asks for the user to try again.
+![Telephone Number Error](documentation/images/telephone-number-error.png)
+* A confirmation message of the number appears.
+
+### Place Order
+* A table presenting the menu of the restaurant is displayed. The user is asked to make a choice or type R to restart order, type E to exit to Main Menu.
+![Menu](documentation/images/menu.png)
+* If the user enters an invalid input, an error message appears and asks the user to try again, until the user's input is valid. A confirmation message appears.
+![Menu Error](documentation/images/Menu-error.png)
+* A table presenting the type of pasta that the restaurant has is displayed. The user is asked to mae a choice or type R to restart order, E to exit to Main Menu.
+![Pasta Menu](documentation/images/pasta.png)
+* If the user enters an invalid input, an error message appears and asks the user to try again, until the user's input is valid. A confirmation message appears.
+![Pasta Error](documentation/images/pasta-error.png)
+* Then, the user is being asked of how much of the selected dish they would like. If the user enters an invalid input, an error message appears and asks the user to try again, until the user's input is valid. A confirmation message appears.
+![Quantity](documentation/images/quantity.png)
+* The user is announced with the total cost of the order. The customer can choose whether to send order, restart order or exit to Main Menu.
+![Price](documentation/images/price.png)
+* If the user chooses to send the order then a confirmation on receiving the order will appear and the user is announced on how long will it take for the order to be delivered.
+![Send Order](documentation/images/send-order.png)
+***
+
+### Future Features
+* A view order option where customers can see how busy the restaurant is at the moment.
+* An online paying option for the customers.
+* An application made for smartphones.
+***
+
+
+
 
 
 
