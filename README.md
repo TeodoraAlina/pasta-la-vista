@@ -27,7 +27,7 @@ As a customer I want to be able to:
 * Be greeted when entering the application.
 * Start placing an order with ease.
 * Find out what dishes I can order.
-* Find out what types of pasta I can choose from my dish.
+* Find out what types of pasta I can choose for my dish.
 * Order more of the same dish.
 * Restart the order before placing it, in case I did a mistake during the order.
 * Be informed in how much time the order will be at my place.
@@ -109,6 +109,30 @@ The user has to provide only alphabetical input. If this fails, then an error me
 * An application made for smartphones.
 ***
 
+## Testing
+### Testing User Stories
+| Reference  | Description  |
+|---|---|
+| 01  | Easily determine the purpose of the application  |
+| Validation  | The user can easily determine that this is an application where you can order food from Pasta la Vista restaurant.  |
+| 02  | Be greeted when entering the application.  |
+| Validation  | The customers are being greeted when entering the application.  |
+| 03  | Start placing an order with ease.  |
+| Validation  | The user can immediately choose to place an order from the main menu.  |
+| 04  | Find out what dishes I can order.  |
+| Validation  | A menu is being displayed for the user, after all the user's details have been completed.  |
+| 05  | Find out what types of pasta I can choose for my dish.  |
+| Validation  | The user is being presented with the types of pasta that the restaurant has.  |
+| 06  | Order more of the same dish.  |
+| Validation  | The user is able to order more of the same dish by entering a number between 1-10.  |
+| 07  | Restart the order before placing it, in case I did a mistake during the order.  |
+| Validation  | The user can restart the order at any time during ordering process.  |
+| 08  | Be informed in how much time the order will be at my place.  |
+| Validation  | After the order is confirmed, the user is being informed of how much time will take for the delivery.  |
+| 09  | Provide a way for my customers to eat from the restaurant anywhere they like.  |
+| Validation  | With the help of this command-line application, the customers can order from anywhere they like.  |
+| 10  | Have stored data of orders and customer details so I can improve my business.  |
+| Validation  | The orders are being received and stored in the google sheet "pasta-la-vista".  |
 
 
 
