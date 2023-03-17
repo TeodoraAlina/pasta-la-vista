@@ -137,17 +137,17 @@ The user has to provide only alphabetical input. If this fails, then an error me
 ### Test Cases and Results
 | Test Category  | Steps  | Expected Outcome  | Result  |
 |---|---|---|---|
-| Main Menu  | Run the application   |  Welcome message. Main menu with option 1. Place order and option 2. Exit Ordering System. Ask the user to input an option. | Pass  |
-| Main Menu - data checks  | Run the application, enter a variety of invalid inputs. e.g cat, empty string, 6. | Error messsage apppears and asks the user to try again.  | Pass  |
-| Main Menu - option 2  | Enter a value of 2  | The application says goodbye and system is being terminated  | Pass  |
-| Main Menu - option 1  | Enter a value of 1  | User can choose from option 1. Continue to place order and option 2. Exit to Main Menu. Ask the user to input an option.  | Pass   |
-| Place Order - option 2  | Enter a value of 2  | Main Menu is displayed.  | Pass  |
-| Place Order - option 1  | Enter a value of 1  | A table with the menu is displayed. Ask user to enter their choice (an input between 1 and 5)  | Pass   |
-|   |   |   |   |
-|   |   |   |   |
-|   |   |   |   |
-|   |   |   |   |
-|   |   |   |   |
+| Main Menu  | Run the application.   |  Welcome message. Main menu with option 1. Place order and option 2. Exit Ordering System. Ask the user to input an option. | Pass  |
+| Main Menu - data checks  | Run the application, enter a variety of invalid inputs. e.g. cat, empty string, 6. | Error messsage apppears and asks the user to try again.  | Pass  |
+| Main Menu - option 2  | Enter a value of 2.  | The application says goodbye and system is being terminated.  | Pass  |
+| Main Menu - option 1  | Enter a value of 1.  | User can choose from option 1. Continue to place order and option 2. Exit to Main Menu. Ask the user to input an option.  | Pass   |
+| Place Order - option 2  | Enter a value of 2.  | Main Menu is displayed.  | Pass  |
+| Place Order - option 1  | Enter a value of 1.  | A table with the menu is displayed. Ask user to enter their choice (an input between 1 and 5).  | Pass   |
+| Choose Pasta Dish - data checks  | Enter invalid inputs, e.g. cat, empty string, 10. | Error message appears and asks the user to try again.  | Pass  |
+| Choose Pasta Dish  | Enter a valid input between 1 and 5.  | A confirmation message appears and a table containing the menu for the types of pasta is displayed. Ask user to enter an input between 1-5. | Pass  |
+| Choose Pasta Type - data checks  | Enter invalid inputs, e.g. cat, empty string, 10.  | Error message appears and asks the user to try again.  | Pass  |
+| Choose Pasta Type  | Enter a valid input between 1 and 5.  | A confirmation message appears. The the system asks the user the quantity of the dish that it is to be ordered. The quantity has to be between 1 and 10. | Pass  |
+| Choose Quantity - data checks  | Enter invalid inputs, e.g. cat, empty string, 12  | Error message appears and asks the user to try again.  | Failed  |
 |   |   |   |   |
 |   |   |   |   |
 |   |   |   |   |
