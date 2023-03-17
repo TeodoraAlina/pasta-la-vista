@@ -292,6 +292,7 @@ def get_quantity(dish, pasta_choice):
                 main()
             else:
                 print(err)
+                print(prompt)
                 continue
         place_order()
 
