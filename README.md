@@ -70,7 +70,7 @@ If the customer makes an error whilst navigating through the system, a message w
 * If the user chooses option one, then the order process starts.
 ![Place Order](documentation/images/place-order.png)
 * From there, the user can either choose to go back to the Main Menu or continue to place the order.
-### Place Order
+
 ### Customer details 
 * The user is informed that first some details will be needed. The user is asked to provide the name.
 ![Name](documentation/images/name.png)
@@ -101,13 +101,26 @@ The user has to provide only alphabetical input. If this fails, then an error me
 ![Price](documentation/images/price.png)
 * If the user chooses to send the order then a confirmation on receiving the order will appear and the user is announced on how long will it take for the order to be delivered.
 ![Send Order](documentation/images/send-order.png)
-***
 
 ### Future Features
 * A view order option where customers can see how busy the restaurant is at the moment.
 * An online paying option for the customers.
 * An application made for smartphones.
 ***
+
+## Technologies Used
+### Languages
+[Python v2023.4.0](https://www.python.org/)
+
+### Frameworks, Libraries and Programs
+* [Google Spreadsheets](https://en.wikipedia.org/wiki/Google_Sheets): used as the external data store for the Orders and Menu data used by the project.
+* [Google Drive API](https://developers.google.com/drive/api/guides/about-sdk): used to generate credentials used in the project to securely access the Google Spreadsheet.
+* [Google Sheets API](https://developers.google.com/sheets/api/guides/concepts): used to support interactions (e.g. read/write functionality) between the code and data stored in the Google Spreadsheet.
+* [gspread](https://docs.gspread.org/en/latest/): Python API for Google Sheets
+* [Google Auth](https://google-auth.readthedocs.io/en/master/): Google authentication library for Python required to use the credentials generated for Google Drive API
+* [Git](https://git-scm.com/): was used for version control by utilising the Gitpod terminal to commit to Git and Push to GitHub.
+* [GitHub](https://github.com/): is used as the repository for the project's code after being pushed from Git.
+* [Heroku](https://dashboard.heroku.com/): is used to deploy the application and provide an enviroment in which the code can execute.
 
 ## Testing
 ### Testing User Stories
@@ -134,6 +147,7 @@ The user has to provide only alphabetical input. If this fails, then an error me
 | 10  | Have stored data of orders and customer details so I can improve my business.  |
 | Validation  | The orders are being received and stored in the google sheet "pasta-la-vista".  |
 ***
+
 ### Test Cases and Results
 | Test Category  | Steps  | Expected Outcome  | Result  |
 |---|---|---|---|
@@ -160,6 +174,8 @@ The user has to provide only alphabetical input. If this fails, then an error me
 | Confirm Order - Exit to Main Menu | Enter valid input 3.  | User is redirected to the Main Menu.  | Pass  |
 | Confirm Order - Send Order  | Enter valid input 1.  | A message appears announcing user that the order has been receive and that it will take a maximum of 30 minutes until it arrives at place of delivery. After that, Main Menu is displayed.  | Pass  |
 ***
+
+
 
 
 
