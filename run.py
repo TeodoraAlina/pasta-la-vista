@@ -56,7 +56,7 @@ def get_name():
         elif selection == "2":
             main()
         else:
-            print("\nInvalid choice, please enter a number between 1-3\n")
+            print("\nInvalid choice, please enter a number between 1-2\n")
             continue
     # If user chooses option 1, while loop is used to request user's name
     # If not valid, error message asks the user to try again
@@ -285,14 +285,13 @@ def get_quantity(dish, pasta_choice):
                 print("Invalid choice.")
                 print(prompt)
                 continue
-        except ValueError():
+        except (ValueError) as err:
             if quantity_input.upper() == "R":
                 place_order()
             elif quantity_input.upper() == "E":
                 main()
             else:
-                print("Invalid choice.")
-                print(prompt)
+                print(err)
                 continue
         place_order()
 

@@ -142,7 +142,13 @@ The user has to provide only alphabetical input. If this fails, then an error me
 | Main Menu - option 2  | Enter a value of 2.  | The application says goodbye and system is being terminated.  | Pass  |
 | Main Menu - option 1  | Enter a value of 1.  | User can choose from option 1. Continue to place order and option 2. Exit to Main Menu. Ask the user to input an option.  | Pass   |
 | Place Order - option 2  | Enter a value of 2.  | Main Menu is displayed.  | Pass  |
-| Place Order - option 1  | Enter a value of 1.  | A table with the menu is displayed. Ask user to enter their choice (an input between 1 and 5).  | Pass   |
+| Place Order - option 1  | Enter a value of 1.  | User is asked to introduce his name.  | Pass   |
+| Enter Name - data checks  | Enter invalid inputs, e.g. 12, empty string, @.  | Error message appears and asks the user to try again.  | Pass  |
+| Enter name  | Enter a valid input containing only alphabetical digits.  | A confirmation message of the name appears and the user is asked for the address of delivery.   | Pass  |
+| Enter Address - data checks  | Enter invalid input containing empty string.  | Error message appears and asks the user to try again.  | Pass  |
+| Enter Address  | Enter a valid input.  | Confirmation message appears and asks the user for the telephone number. The number must begin with 07 and have 11 digits.  | Pass  |
+| Enter Telephone Number - data checks  | Enter invalid inputs, e.g. cat, 10 digits, empty string, 11 digits but starting with 06.  | Error message appears and asks the user to try again.  | Pass  |
+| Enter Telephone Number  | Enter valid input containing 11 digits and starting with 07.  | Confirmation message of the number appears. A table with the menu is displayed. Ask user to enter their choice (an input between 1 and 5).  | Pass  |
 | Choose Pasta Dish - data checks  | Enter invalid inputs, e.g. cat, empty string, 10. | Error message appears and asks the user to try again.  | Pass  |
 | Choose Pasta Dish  | Enter a valid input between 1 and 5.  | A confirmation message appears and a table containing the menu for the types of pasta is displayed. Ask user to enter an input between 1-5. | Pass  |
 | Choose Pasta Type - data checks  | Enter invalid inputs, e.g. cat, empty string, 10.  | Error message appears and asks the user to try again.  | Pass  |
@@ -156,6 +162,7 @@ The user has to provide only alphabetical input. If this fails, then an error me
 |   |   |   |   |
 |   |   |   |   |
 |   |   |   |   |
+
 
 
 
