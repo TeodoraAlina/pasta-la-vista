@@ -184,7 +184,7 @@ The user has to provide only alphabetical input. If this fails, then an error me
 ## Bugs
 * There was a problem within the get_price function where the price did not show. Fixed it by putting the index number and the key in separate square brakets.
 * While testing the code, it was a bug within the get_quantity function. When entering invalid inputs, an error showed up. Fixed it by changing the except statement from this code:
-`
+```
 except ValueError():
             if quantity_input.upper() == "R":
                 place_order()
@@ -195,9 +195,9 @@ except ValueError():
                 print(prompt)
                 continue
         place_order()
-`
+```
 To this code:
-`
+```
 except ValueError as err:
             if quantity_input.upper() == "R":
                 place_order()
@@ -208,8 +208,125 @@ except ValueError as err:
                 print(prompt)
                 continue
         place_order()
-`
+```
 
 ## Known Bugs
 There are no known bugs at the moment.
 ***
+
+## Deployment
+
+### Delpoying to GitHub Pages
+
+The project was deployed with the following steps
+
+* Log into GitHub;
+* Click the "Settings" button in the menu above the Repository;
+* Scroll down the Settings page to the "GitHub Pages" Section;
+* Under "Source", click the dropdown called "None" and then select "Master Branch";
+* The page will automatically refresh, and a link displaced. It may take some time for the link to show the website.
+* If the page will not load go down to "template" under the "source" and select a template.
+* Scroll back down through the page to locate the now published site link in the "GitHub Pages" section.
+
+
+### Forking
+
+Forking the GitHub Repository
+
+By forking the GitHub Repository, you can make a copy of the original repository in your own GitHub account. This means we can view or make changes without making the changes affecting the original.
+
+* Log into GitHub and locate the GitHub Repository;
+* At the top of the Repository there is a "Fork" button about the "Settings" button on the menu;
+* You should now have a new copy of the original repository in your own GitHub account.
+
+### Cloning
+ 
+ Taken from GitHub's documentation on cloning, which can be found [here](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository#cloning-a-repository-to-github-desktop) :
+ 
+* Once logged into GitHub, navigate to the repository you wish to clone.
+* Next to the green Gitpod button there's a button that reads code, click this.
+* To clone the repository using HTTPS, copy the link whilst HTTPS is selected.
+* Open your local IDE of choice and open the terminal.
+* Navigate to the working directory of where you want the cloned directory to be.
+* Type ```git clone``` in the terminal and then paste the link that you selected in step 3. Press enter.
+* The clone is created in your current working directory (```cwd```).
+
+### Adding and commiting files
+
+I’ve been using Gitpod to write my code and using the terminal within to add, commit and push code from my workspace to GitHub where it is stored remotely as shown in the course content.
+
+* When I have made a couple of minor additions / changes or one large change or addition I add the file in question to the staging area by typing in the terminal git add . the full stop will add all new files.
+* I now want to save my changes to the local repository by typing git commit –m “ ” into the terminal. Between the “ ” I'll write a concise message detailing what this commit has done.
+* When I either want to upload all my changes for the day or view on GitHub Pages I push all the commits I’ve previously done to GitHub using the git push command. When GitHub Pages is set up for the repository in question it will automatically pick up these changes and display the most up to date version that has been pushed.
+***
+
+## Deploying to Heroku
+* The requirements.txt file in the project was updated to include details on the project dependencies. Steps to do this are : 
+     * Enter the following command at the terminal prompt : 'pip3 freeze > requirements.txt'
+     * Commit resulting changes to requirements.txt and push to github
+     * Log in to [Heroku](https://id.heroku.com/), create an account if necessary.
+
+* From the Heroku dashboard, click the Create new app button. For a new account an icon will be visible on screen to allow you to Create an app, otherwise a link to this function is located under the New dropdown menu at the top right of the screen.
+
+* On the Create New App page, enter a unique name for the application and select region. Then click Create app.
+
+* You will then be brought to the Application Configuration page for your new app. Changes are needed here on the Settings and Deploy tabs.
+
+* Click on the Settings tab and then scroll down to the Config Vars section to set up the private Environment Variables for the application - i.e. the credentials used by the application to access the spreadsheet data.
+
+* Click on Reveal Config Vars. In the field for key enter 'CREDS' and paste the entire contents of the creds.json file into the VALUE field and click ADD.
+
+* Next, scroll down the Settings page to Buildpacks. Click Add buildpack, select Python from the pop up window and click on Save changes. Click Add buildpack again, select Node.js from the pop up window and click on Save changes. It is important that the buildpacks are listed Python first, then Node.js beneath.
+
+* Click on the Deploy tab on the Application Configuration page.
+
+* Select GitHub as the Deployment Method and if prompted, confirm that you want to connect to GitHub. Enter the name of the github repository (the one used for this project is https://github.com/TeodoraAlina/pasta-la-vista) and click on Connect to link up the Heroku app to the GitHub repository code.
+
+* Scroll down the page and choose to either Automatically Deploy each time changes are pushed to GitHub, or Manually deploy - for this project Automatic Deploy was selected.
+
+* The application can be run from the Application Configuration page by clicking on the Open App button.
+
+* The live link for this project is (https://pasta-la-vista.herokuapp.com/)
+
+## How to create and configure the Google spreadsheet and APIs
+* Create the Google Spreadsheet : 
+    * Log in to your Google account (create one if necessary)
+    * Create a Google Spreadsheet called 'ms3-event-scheduler' on Google Drive with 2 pages/sheets, one called 'events' and one called 'bookings'.
+    * In row 1 of the events sheet, enter the headings : Event Code, Event Name, Date, Host, Capacity, Status Reason.
+    * In row 1 of the bookings sheet, enter the headings : Event Code, Date, Name, Email, Seats
+    * The initial sample data used in this project can be seen here, however it is not necessary to use that data : Content
+    
+* Set up APIs using the Google Cloud Platform
+    * Access the [Google Cloud Platform](https://console.cloud.google.com/)
+    * Create a new project and give it a unique name, then select the project to go to the project dashboard
+    * Setup Google Drive credentials
+       * Click on the hamburger menu in the top left of the screen to access the navigation menu
+       * On the left hand menu select 'APIs and Services' and then 'Library'
+       * Search for Google Drive API
+       * Select Google Drive API and click on 'enable' to get to the API and Services Overview page
+       * Click on the Create Credentials button near the top left of the screen
+       * Select 'Google Drive' API from the dropdown for 'Credential Type'
+       * Select the 'Application Data' radio button in the 'What data will you be accessing' area
+       * Select the 'No, I'm not using them' for the 'Are you planning to use this API with Compute Engine, Kubernetes Engine, App Engine, or Cloud Functions?' area
+       * Cick Next
+       * On the Create Service Account page, step 1 is to enter a service account name in the first text box. Any value can be entered here.
+       * Click on 'Create and Continue'
+       * On step 2, 'Grant this service account access to project', select Basic -> Editor from the 'Select a Role' dropdown.
+       * Click on Continue
+       * On step 3, 'Grant users access to this service account', simply press Done, no input is necessary
+       * On the next page, click on the service account name created (listed under the Service Accounts area) to go to the configuration page for the new service account.
+       * Click on the KEYS tab at the top middle of the screen.
+       * Click on the Add Key dropdown and select Create New Key.
+       * Select the JSON radio button then click Create. The json file with the new API credentials will download your machine.
+       * Rename the downloaded file to creds.json. This filename is already listed in the project .gitignore file and so no further action will be needed to prevent it being accidentally uploaded to github
+       * Copy the new creds.json file into the local clone
+       * In the creds.json file, copy the value for "client email" and then on Google Drive, share the spreadsheet created above with this email address assigning a role of Editor.
+
+    * Enable Google Sheets API
+    * Go back to the dashboard for the project on Google Cloud Platform and access the navigation menu as before
+    * On the left hand menu select 'APIs and Services' and then 'Library'
+    * Search for Google Sheets API
+    * Select Google Sheets API and click on 'enable'
+
+* Install gspread and google-auth libraries in the development environment using the command 'pip3 install gspread google-auth'
+
