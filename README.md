@@ -121,6 +121,7 @@ The user has to provide only alphabetical input. If this fails, then an error me
 * [Git](https://git-scm.com/): was used for version control by utilising the Gitpod terminal to commit to Git and Push to GitHub.
 * [GitHub](https://github.com/): is used as the repository for the project's code after being pushed from Git.
 * [Heroku](https://dashboard.heroku.com/): is used to deploy the application and provide an enviroment in which the code can execute.
+***
 
 ## Testing
 ### Testing User Stories
@@ -174,6 +175,11 @@ The user has to provide only alphabetical input. If this fails, then an error me
 | Confirm Order - Exit to Main Menu | Enter valid input 3.  | User is redirected to the Main Menu.  | Pass  |
 | Confirm Order - Send Order  | Enter valid input 1.  | A message appears announcing user that the order has been receive and that it will take a maximum of 30 minutes until it arrives at place of delivery. After that, Main Menu is displayed.  | Pass  |
 ***
+
+### Validator Testing
+* [Python Validator](https://pep8ci.herokuapp.com)
+![Code Validator](documentation/images/validator-testing.png)
+
 
 
 
