@@ -179,12 +179,37 @@ The user has to provide only alphabetical input. If this fails, then an error me
 ### Validator Testing
 * [Python Validator](https://pep8ci.herokuapp.com)
 ![Code Validator](documentation/images/validator-testing.png)
+***
 
+## Bugs
+* There was a problem within the get_price function where the price did not show. Fixed it by putting the index number and the key in separate square brakets.
+* While testing the code, it was a bug within the get_quantity function. When entering invalid inputs, an error showed up. Fixed it by changing the except statement from this code:
+`
+except ValueError():
+            if quantity_input.upper() == "R":
+                place_order()
+            elif quantity_input.upper() == "E":
+                main()
+            else:
+                print("Invalid choice.")
+                print(prompt)
+                continue
+        place_order()
+`
+To this code:
+`
+except ValueError as err:
+            if quantity_input.upper() == "R":
+                place_order()
+            elif quantity_input.upper() == "E":
+                main()
+            else:
+                print(err)
+                print(prompt)
+                continue
+        place_order()
+`
 
-
-
-
-
-
-
-
+## Known Bugs
+There are no known bugs at the moment.
+***
