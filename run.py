@@ -285,7 +285,7 @@ def get_quantity(dish, pasta_choice):
                 print("Invalid choice.")
                 print(prompt)
                 continue
-        except (ValueError) as err:
+        except ValueError as err:
             if quantity_input.upper() == "R":
                 place_order()
             elif quantity_input.upper() == "E":
