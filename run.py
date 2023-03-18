@@ -56,7 +56,7 @@ def get_name():
         elif selection == "2":
             main()
         else:
-            print("\nInvalid choice, please enter a number between 1-2\n")
+            print("\nInvalid choice, please enter a number between 1-2.\n")
             continue
     # If user chooses option 1, while loop is used to request user's name
     # If not valid, error message asks the user to try again
@@ -80,12 +80,13 @@ def get_address():
         and requests the user to try again
     Returns:
            Print statement confirming input is valid
+           address used within place_order function
     """
     while True:
         address = input('Please enter your address for delivery:\n').strip()
         if address == '':
             print("It seems like you haven't entered an address,")
-            print("please try again\n")
+            print("please try again.\n")
             continue
         else:
             print("Thank you! We will deliver your order at this address.\n")
@@ -101,13 +102,14 @@ def get_tel_number():
         using Re pattern match
     Return:
           Confirm input is valid using print statement
+          tel_number used within place_order function
     """
     print("Please enter your telephone number.\n")
     #  While loop to request user inputs valid contact phone number
     #  If not valid, error message asks the user to try again
     while True:
-        tel_number = input("Enter your telephone number here(11 digits, "
-                           "starting with 07):\n")
+        tel_number = input("Enter your telephone number here (11 digits, "
+                           "starting with 07) :\n")
         if validate_tel_num(tel_number):
             print(f"Thank you, we will use {tel_number} to contact you"
                   " when we get at your location.\n")
@@ -147,6 +149,7 @@ def get_order():
         Else requests the user to try again.
     Returns:
            Print statement confirming input is valid
+           dish used within place_order function
     """
     # Print statement to inform the user of what content is displayed
     print("Here are our delicious pasta dishes.")
@@ -201,9 +204,10 @@ def get_pasta():
         Else requests the user to try again.
     Returns:
            Confirm user input using print statement
+           pasta_choice used within place_order function
     """
     # Print statement to inform the user of what content is displayed
-    print("We have different types of pasta for you to choose from")
+    print("We have different types of pasta for you to choose from.")
     print("Which one would you like to choose?\n")
     # Printing the pasta menu imported from external spreadsheet
     pasta = SHEET.worksheet("Pasta").get_all_values()
@@ -245,7 +249,7 @@ def get_pasta():
         elif pasta_choice == "E":
             main()
         else:
-            print("Invalid choice, please enter a number between 1-5\n")
+            print("Invalid choice, please enter a number between 1-5.\n")
             continue
     place_order()
 
@@ -306,6 +310,7 @@ def get_price(dish, quantity):
         If statement used to multiply the price of the dish * quantity
     Returns:
            f string with calculated price used within place_order function
+           price used within place_order function
     """
     order_price = SHEET.worksheet("Menu").get_all_records()
     if dish == "Cacio e Pepe":
@@ -418,7 +423,7 @@ def place_order():
         if user_confirm == "3":
             main()
         else:
-            print("Invalid choice, please enter a number between 1-3\n")
+            print("Invalid choice, please enter a number between 1-3.\n")
             continue
         place_order()
 
@@ -445,7 +450,7 @@ def main():
     print("Main Menu")
     print("1. Place an Order")
     print("2. Exit Ordering System\n")
-    print("Please select an option by entering a number between 1-2\n")
+    print("Please select an option by entering a number between 1-2.\n")
     # While loop used to request user to enter valid inputs between 1-2
     # If not valid, error message asks the user to try again
     while True:
@@ -456,7 +461,7 @@ def main():
             sys.exit("Sad to see you go! See you soon though..."
                      "Have a wonderful day!\n")
         else:
-            print("Invalid choice, please enter a number between 1-2\n")
+            print("Invalid choice, please enter a number between 1-2.\n")
             continue
 
 
