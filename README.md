@@ -295,7 +295,8 @@ I’ve been using Gitpod to write my code and using the terminal within to add, 
     * In row 1 of the events sheet, enter the headings : Event Code, Event Name, Date, Host, Capacity, Status Reason.
     * In row 1 of the bookings sheet, enter the headings : Event Code, Date, Name, Email, Seats
     * The initial sample data used in this project can be seen here, however it is not necessary to use that data : Content
-    
+***
+
 * Set up APIs using the Google Cloud Platform
     * Access the [Google Cloud Platform](https://console.cloud.google.com/)
     * Create a new project and give it a unique name, then select the project to go to the project dashboard
@@ -329,4 +330,15 @@ I’ve been using Gitpod to write my code and using the terminal within to add, 
     * Select Google Sheets API and click on 'enable'
 
 * Install gspread and google-auth libraries in the development environment using the command 'pip3 install gspread google-auth'
+***
+
+## Credits
+### Code
+* Information on how to use Python RegEx came from [this website](https://www.w3schools.com/python/python_regex.asp)
+* Code for validating telephone number using RegEx came from [this website](https://stackoverflow.com/questions/16405187/regular-expression-for-uk-mobile-number-python)
+* Information on how to create a table in Python came from [this website](https://www.askpython.com/python-modules/tabulate-tables-in-python)
+* Information on how to fix the bug on the try except statement came from [this website](https://stackoverflow.com/questions/20057719/how-to-fix-invalid-syntax-error-at-except-valueerror)
+* Information on how to clear console came from [this website](https://stackoverflow.com/questions/2084508/clear-terminal-in-python/2084521)
+* Information on how to add a pause between functions came from [this website](https://stackoverflow.com/questions/510348/how-do-i-make-a-time-delay)
+
 
