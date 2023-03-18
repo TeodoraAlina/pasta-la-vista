@@ -340,5 +340,11 @@ I’ve been using Gitpod to write my code and using the terminal within to add, 
 * Information on how to fix the bug on the try except statement came from [this website](https://stackoverflow.com/questions/20057719/how-to-fix-invalid-syntax-error-at-except-valueerror)
 * Information on how to clear console came from [this website](https://stackoverflow.com/questions/2084508/clear-terminal-in-python/2084521)
 * Information on how to add a pause between functions came from [this website](https://stackoverflow.com/questions/510348/how-do-i-make-a-time-delay)
+***
 
+### Content
+* This is the [Google Spreadsheet](https://docs.google.com/spreadsheets/d/1_8mor_TB0ZE-gW2Sxh5LiO3gbOzIasn0HXfoguFOyiQ/edit?usp=sharing) that has been used for this project.
 
+### Acknowledgments
+* Tutor support at Code Institute for their help when required.
+* My mentor, Brian Macharia, for helping, teaching me various new things and guiding me through this project during the mentor sessions.
