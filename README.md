@@ -174,6 +174,7 @@ The user has to provide only alphabetical input. If this fails, then an error me
 | Confirm Order - Restart Order  | Enter valid input 2.  | User is redirected to restart the order, back to place order screen.  | Pass  |
 | Confirm Order - Exit to Main Menu | Enter valid input 3.  | User is redirected to the Main Menu.  | Pass  |
 | Confirm Order - Send Order  | Enter valid input 1.  | A message appears announcing user that the order has been receive and that it will take a maximum of 30 minutes until it arrives at place of delivery. After that, Main Menu is displayed.  | Pass  |
+| Spreadsheet - Orders  | After user sends order, check the spreadsheet if the data has been imported.  | All data has been received.  | Pass  |
 ***
 
 ### Validator Testing
@@ -242,7 +243,9 @@ By forking the GitHub Repository, you can make a copy of the original repository
 
 ### Cloning
  <details>
- <summary>Taken from GitHub's documentation on cloning, which can be found [here](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository#cloning-a-repository-to-github-desktop)</summary>
+ <summary>Steps on cloning</summary>
+
+Taken from GitHub's documentation on cloning, which can be found [here](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository#cloning-a-repository-to-github-desktop)
  
 * Once logged into GitHub, navigate to the repository you wish to clone.
 * Next to the green Gitpod button there's a button that reads code, click this.
