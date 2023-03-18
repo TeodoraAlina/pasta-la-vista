@@ -217,8 +217,8 @@ There are no known bugs at the moment.
 ## Deployment
 
 ### Delpoying to GitHub Pages
-
-The project was deployed with the following steps
+<details>
+<summary>The project was deployed with the following steps</summary>
 
 * Log into GitHub;
 * Click the "Settings" button in the menu above the Repository;
@@ -227,21 +227,22 @@ The project was deployed with the following steps
 * The page will automatically refresh, and a link displaced. It may take some time for the link to show the website.
 * If the page will not load go down to "template" under the "source" and select a template.
 * Scroll back down through the page to locate the now published site link in the "GitHub Pages" section.
-
+</details>
 
 ### Forking
-
-Forking the GitHub Repository
+<details>
+<summary>Forking the GitHub Repository</summary>
 
 By forking the GitHub Repository, you can make a copy of the original repository in your own GitHub account. This means we can view or make changes without making the changes affecting the original.
 
 * Log into GitHub and locate the GitHub Repository;
 * At the top of the Repository there is a "Fork" button about the "Settings" button on the menu;
 * You should now have a new copy of the original repository in your own GitHub account.
+</details>
 
 ### Cloning
- 
- Taken from GitHub's documentation on cloning, which can be found [here](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository#cloning-a-repository-to-github-desktop) :
+ <details>
+ <summary>Taken from GitHub's documentation on cloning, which can be found [here](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository#cloning-a-repository-to-github-desktop)</summary>
  
 * Once logged into GitHub, navigate to the repository you wish to clone.
 * Next to the green Gitpod button there's a button that reads code, click this.
@@ -250,17 +251,21 @@ By forking the GitHub Repository, you can make a copy of the original repository
 * Navigate to the working directory of where you want the cloned directory to be.
 * Type ```git clone``` in the terminal and then paste the link that you selected in step 3. Press enter.
 * The clone is created in your current working directory (```cwd```).
+</details>
 
 ### Adding and commiting files
-
+<details>
+<summary>Steps to adding and commiting files</summary>
 I’ve been using Gitpod to write my code and using the terminal within to add, commit and push code from my workspace to GitHub where it is stored remotely as shown in the course content.
 
 * When I have made a couple of minor additions / changes or one large change or addition I add the file in question to the staging area by typing in the terminal git add . the full stop will add all new files.
 * I now want to save my changes to the local repository by typing git commit –m “ ” into the terminal. Between the “ ” I'll write a concise message detailing what this commit has done.
 * When I either want to upload all my changes for the day or view on GitHub Pages I push all the commits I’ve previously done to GitHub using the git push command. When GitHub Pages is set up for the repository in question it will automatically pick up these changes and display the most up to date version that has been pushed.
-***
+</details>
 
 ## Deploying to Heroku
+<details>
+<summary>Steps on how to deploy to Heroku</summary>
 * The requirements.txt file in the project was updated to include details on the project dependencies. Steps to do this are : 
      * Enter the following command at the terminal prompt : 'pip3 freeze > requirements.txt'
      * Commit resulting changes to requirements.txt and push to github
@@ -287,8 +292,11 @@ I’ve been using Gitpod to write my code and using the terminal within to add, 
 * The application can be run from the Application Configuration page by clicking on the Open App button.
 
 * The live link for this project is (https://pasta-la-vista.herokuapp.com/)
+</details>
 
 ## How to create and configure the Google spreadsheet and APIs
+<details>
+<summary>Steps to setup and configure access to data</summary>
 * Create the Google Spreadsheet : 
     * Log in to your Google account (create one if necessary)
     * Create a Google Spreadsheet called 'ms3-event-scheduler' on Google Drive with 2 pages/sheets, one called 'events' and one called 'bookings'.
@@ -330,6 +338,7 @@ I’ve been using Gitpod to write my code and using the terminal within to add, 
     * Select Google Sheets API and click on 'enable'
 
 * Install gspread and google-auth libraries in the development environment using the command 'pip3 install gspread google-auth'
+</details>
 ***
 
 ## Credits
