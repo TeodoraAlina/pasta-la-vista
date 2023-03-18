@@ -10,7 +10,7 @@ You can view the GitHub repository here - [TeodoraAlina/pasta-la-vista](https://
 ## User Experience (UX)
 
 ### Strategy
-* The application will provide a way for ordering from the restaurant.
+* The application will provide a way to order from the restaurant.
 * The application will collect data for the restaurant about orders and customers details.
 * Customers will be greeted when entering the application.
 * Customers will have multiple options of dishes and pasta types to order from.
@@ -57,7 +57,7 @@ The website will contain a simple interface that immediately greets the customer
 If the customer makes an error whilst navigating through the system, a message will appear guiding them on the steps to take, whilst also having the ability to navigate to the Main Menu and exit the system. Furthermore, customers will have the ability to restart the order from within the interface.
 ***
 
-### Features
+## Features
 ### Existing Features 
 ### Main Menu
 * A welcome message greets the customer.
